@@ -8,9 +8,9 @@ import { HeroesComponent } from "./heroes.component";
   ];
   
   @NgModule({
-    imports: [ 
-      RouterModule.forChild(routes),
-      LocalizeRouterModule.forChild(routes)
+    imports: [
+      LocalizeRouterModule.forChild(routes),
+      RouterModule.forChild(routes)
     ],
     exports: [ RouterModule, LocalizeRouterModule ]
   })

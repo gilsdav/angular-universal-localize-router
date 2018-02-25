@@ -27,15 +27,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ 
-    RouterModule.forRoot(routes),
+  imports: [
     LocalizeRouterModule.forRoot(routes, {
       parser: {
         provide: LocalizeParser,
         useFactory: (createTranslateLoader),
         deps: [TranslateService, Location, LocalizeRouterSettings/*, HttpClient*/]
       }
-    })
+    }),
+    RouterModule.forRoot(routes)
   ],
   exports: [ RouterModule, LocalizeRouterModule ]
 })
