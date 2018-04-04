@@ -4,7 +4,8 @@ import { NgModule } from "@angular/core";
 import { HeroesComponent } from "./heroes.component";
 
   const routes: Routes = [
-    { path: '', component: HeroesComponent }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HeroesComponent }
   ];
   
   @NgModule({
