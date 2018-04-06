@@ -31,8 +31,6 @@ export class UniversalLocalizeModuleMapNgFactoryLoader implements NgModuleFactor
 
   load(loadChildrenString: string): Promise<NgModuleFactory<any>> {
 
-    console.log('load loadChildrenString', loadChildrenString);
-
     const offlineMode = this.compiler instanceof Compiler;
     const type = this.moduleMap[loadChildrenString];
 
