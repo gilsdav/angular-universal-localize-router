@@ -1,5 +1,6 @@
 {
     "HELLO": "Bonjour !",
     "ROUTES.heroes": "heros",
-    "ROUTES.home": "accueil"
+    "ROUTES.home": "accueil",
+    "ROUTES.dashboard": "dashboard"
 }
