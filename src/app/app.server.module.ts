@@ -4,7 +4,7 @@ import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader'
 
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
-import { UniversalLocalizeModuleMapNgFactoryLoader } from './universal-localize-module-map-ngfactory-loader';
+import { LazyUniversalModuleLoaderProvider } from 'localize-router-lazy-universal-module-loader';
 
 @NgModule({
   imports: [
@@ -14,10 +14,7 @@ import { UniversalLocalizeModuleMapNgFactoryLoader } from './universal-localize-
   ],
   providers: [
     // Add universal-only providers here
-    {
-      provide: NgModuleFactoryLoader,
-      useClass: UniversalLocalizeModuleMapNgFactoryLoader
-    }
+    LazyUniversalModuleLoaderProvider
   ],
   bootstrap: [ AppComponent ],
 })
