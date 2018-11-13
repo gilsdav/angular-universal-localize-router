@@ -4,6 +4,11 @@ const webpack = require('webpack');
 module.exports = {
   entry: { server: './server.ts' },
   resolve: { extensions: ['.js', '.ts'] },
+  optimization: {
+    // keep minimization off
+    // workaround for https://github.com/angular/angular-cli/issues/10635
+    minimize: false
+  },
   target: 'node',
   // this makes sure we include node_modules and other 3rd party libraries
   externals: [/(node_modules|main\..*\.js)/],

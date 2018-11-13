@@ -1,14 +1,13 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Location }             from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 
 import { DashboardComponent }   from './dashboard/dashboard.component';
 // import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
-import { LocalizeRouterModule, LocalizeRouterSettings, LocalizeParser, ManualParserLoader } from 'localize-router';
-// import { LocalizeRouterHttpLoader } from 'localize-router-http-loader';
+import { LocalizeRouterModule, LocalizeRouterSettings, LocalizeParser, ManualParserLoader } from '@gilsdav/ngx-translate-router';
+// import { LocalizeRouterHttpLoader } from '@gilsdav/ngx-translate-router-http-loader';
 import { TranslateService } from '@ngx-translate/core';
 
 /* export function createTranslateLoader(translate: TranslateService, location: Location, settings: LocalizeRouterSettings, http: HttpClient) {
