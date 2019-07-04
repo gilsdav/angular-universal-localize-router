@@ -4,11 +4,13 @@ import { HeroesComponent } from './heroes.component';
 import { HeroesRoutingModule } from './heroes.module-routing';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { translateModule } from '@gilsdav/ngx-translate-router';
+
 @NgModule({
     declarations: [
         HeroesComponent
     ],
-    imports: [ 
+    imports: [
         CommonModule,
         HeroesRoutingModule,
         TranslateModule.forChild()
@@ -17,3 +19,5 @@ import { TranslateModule } from '@ngx-translate/core';
     providers: [],
 })
 export class HeroesModule {}
+
+// export const HeroesModuleTranslated = translateModule(HeroesModule) as NgModuleFactory<any>;

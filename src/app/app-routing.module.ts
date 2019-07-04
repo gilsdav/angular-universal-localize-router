@@ -6,7 +6,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 // import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
-import { LocalizeRouterModule, LocalizeRouterSettings, LocalizeParser, ManualParserLoader } from '@gilsdav/ngx-translate-router';
+import { LocalizeRouterModule, LocalizeRouterSettings, LocalizeParser, ManualParserLoader, translateModule } from '@gilsdav/ngx-translate-router';
 // import { LocalizeRouterHttpLoader } from '@gilsdav/ngx-translate-router-http-loader';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -14,7 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
   return new LocalizeRouterHttpLoader(translate, location, settings, http)
 } */
 
-export function createTranslateLoader(translate: TranslateService, location: Location, settings: LocalizeRouterSettings,) {
+export function createTranslateLoader(translate: TranslateService, location: Location, settings: LocalizeRouterSettings) {
   return new ManualParserLoader(translate, location, settings, ['en', 'fr'], 'ROUTES.');
 }
 
@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' }
+  // { path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(mod => mod.HeroesModule).then(mod => translateModule(mod)) }
 ];
 
 @NgModule({
