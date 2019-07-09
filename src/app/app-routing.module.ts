@@ -14,7 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
   return new LocalizeRouterHttpLoader(translate, location, settings, http)
 } */
 
-export function createTranslateLoader(translate: TranslateService, location: Location, settings: LocalizeRouterSettings,) {
+export function createTranslateLoader(translate: TranslateService, location: Location, settings: LocalizeRouterSettings) {
   return new ManualParserLoader(translate, location, settings, ['en', 'fr'], 'ROUTES.');
 }
 
@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' }
+  // { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' }
+  { path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(mod => mod.HeroesModule) }
 ];
 
 @NgModule({

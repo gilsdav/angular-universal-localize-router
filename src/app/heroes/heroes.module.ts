@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
     declarations: [
         HeroesComponent
     ],
-    imports: [ 
+    imports: [
         CommonModule,
         HeroesRoutingModule,
         TranslateModule.forChild()
@@ -17,3 +17,5 @@ import { TranslateModule } from '@ngx-translate/core';
     providers: [],
 })
 export class HeroesModule {}
+
+// export const HeroesModuleTranslated = translateModule(HeroesModule) as NgModuleFactory<any>;

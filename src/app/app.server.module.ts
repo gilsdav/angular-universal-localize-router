@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     // Add universal-only providers here
-    LazyUniversalModuleLoaderProvider
+    // LazyUniversalModuleLoaderProvider
   ],
   bootstrap: [ AppComponent ],
 })
