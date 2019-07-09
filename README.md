@@ -1,6 +1,6 @@
 # angular-universal-localize-router
 
-Angular (5-7) + universal + ngx-translate + localize-router + lazyloading
+Angular (5-8) + universal + ngx-translate + localize-router + lazyloading
 
 ## Find appropriate source
 
