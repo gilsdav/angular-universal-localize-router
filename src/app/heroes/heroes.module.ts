@@ -4,8 +4,6 @@ import { HeroesComponent } from './heroes.component';
 import { HeroesRoutingModule } from './heroes.module-routing';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { translateModule } from '@gilsdav/ngx-translate-router';
-
 @NgModule({
     declarations: [
         HeroesComponent
