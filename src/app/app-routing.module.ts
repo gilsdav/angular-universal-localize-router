@@ -6,7 +6,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 // import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
-import { LocalizeRouterModule, LocalizeRouterSettings, LocalizeParser, ManualParserLoader, translateModule } from '@gilsdav/ngx-translate-router';
+import { LocalizeRouterModule, LocalizeRouterSettings, LocalizeParser, ManualParserLoader } from '@gilsdav/ngx-translate-router';
 // import { LocalizeRouterHttpLoader } from '@gilsdav/ngx-translate-router-http-loader';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -22,8 +22,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' }
-  // { path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(mod => mod.HeroesModule).then(mod => translateModule(mod)) }
+  // { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' }
+  { path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(mod => mod.HeroesModule) }
 ];
 
 @NgModule({
