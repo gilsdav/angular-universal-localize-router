@@ -1,6 +1,5 @@
-import { NgModule, NgModuleFactoryLoader } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
-import { LazyUniversalModuleLoaderProvider } from 'localize-router-lazy-universal-module-loader';
 
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
@@ -10,10 +9,7 @@ import { AppComponent } from './app.component';
     AppModule,
     ServerModule
 ],
-  providers: [
-    // Add universal-only providers here
-    // LazyUniversalModuleLoaderProvider
-  ],
+  providers: [],
   bootstrap: [ AppComponent ],
 })
 export class AppServerModule {}

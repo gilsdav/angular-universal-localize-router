@@ -13,12 +13,8 @@
     "start:fr": "ng serve --aot --i18nFile=src/locale/messages.fr.xlf --i18nFormat=xlf --locale=fr",
     "build:fr": "ng build --prod --i18nFile=src/locale/messages.fr.xlf --i18nFormat=xlf --locale=fr",
     "extract": "ng xi18n --outputPath=src/locale",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
-    "build:ssr_bak": "npm run build:client-and-server-bundles && npm run webpack:server",
-    "serve:ssr_bak": "cd dist && node server.js",
-    "build:client-and-server-bundles_bak": "ng build --prod && ng run angular.io-example:server:production",
     "dev:ssr": "ng run angular.io-example:serve-ssr",
-    "serve:ssr": "node dist/server/main.js",
+    "serve:ssr": "cd dist && node server/main.js",
     "build:ssr": "ng build --prod && ng run angular.io-example:server:production",
     "prerender": "ng run angular.io-example:prerender",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
@@ -36,7 +32,7 @@
     "@angular/platform-browser-dynamic": "~9.0.0-rc.6",
     "@angular/platform-server": "~9.0.0-rc.6",
     "@angular/router": "~9.0.0-rc.6",
-    "@gilsdav/ngx-translate-router": "~3.0.0-rc1",
+    "@gilsdav/ngx-translate-router": "~3.0.0-rc2",
     "@gilsdav/ngx-translate-router-http-loader": "~1.1.0",
     "@nguniversal/express-engine": "~9.0.0-next.9",
     "@ngx-cache/core": "~7.0.0",
@@ -44,12 +40,11 @@
     "@ngx-translate/http-loader": "~4.0.0",
     "angular-in-memory-web-api": "~0.8.0",
     "core-js": "~2.5.7",
-    "localize-router-lazy-universal-module-loader": "1.0.0-ntr",
+    "express": "^4.15.2",
     "rxjs": "~6.5.3",
     "ts-loader": "~5.3.0",
-    "zone.js": "~0.10.2",
-    "express": "^4.15.2",
-    "tslib": "^1.10.0"
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.0-rc.6",
