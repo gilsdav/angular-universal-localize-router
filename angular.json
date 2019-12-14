@@ -104,7 +104,7 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/server",
-            "main": "src/main.server.ts",
+            "main": "server.ts",
             "tsConfig": "src/tsconfig.server.json",
             "preserveSymlinks": true
           },
@@ -118,6 +118,27 @@
               ],
               "optimization": true
             }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "angular.io-example:build",
+            "serverTarget": "angular.io-example:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular.io-example:build:production",
+              "serverTarget": "angular.io-example:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "angular.io-example:build:production",
+            "serverTarget": "angular.io-example:server:production",
+            "routes": []
           }
         }
       }

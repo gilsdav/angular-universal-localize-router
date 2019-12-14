@@ -10,6 +10,7 @@
     "entryModule": "app/app.server.module#AppServerModule"
   },
   "files": [
-    "main.server.ts"
+    "main.server.ts",
+    "server.ts"
   ]
 }
