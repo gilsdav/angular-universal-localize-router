@@ -12,5 +12,8 @@
   "files": [
     "main.server.ts",
     "../server.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
   ]
 }
