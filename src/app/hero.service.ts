@@ -25,12 +25,18 @@ export class HeroService {
     }
 
   /** GET heroes from the server */
-  getHeroes (): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
-      .pipe(
-        tap(heroes => this.log(`fetched heroes`)),
-        catchError(this.handleError('getHeroes', []))
-      );
+  getHeroes(): Observable<Hero[]> {
+    // return this.http.get<Hero[]>(this.heroesUrl)
+    //   .pipe(
+    //     tap(heroes => this.log(`fetched heroes`)),
+    //     catchError(this.handleError('getHeroes', []))
+    //   );
+    return of([
+      { id: 1, name: 'bob 1' },
+      { id: 2, name: 'bob 2' },
+      { id: 3, name: 'bob 3' },
+      { id: 3, name: 'bob 3' },
+    ] as Hero[]);
   }
 
   /** GET hero by id. Return `undefined` when id not found */
