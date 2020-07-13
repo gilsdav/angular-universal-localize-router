@@ -28,13 +28,14 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { initialNavigation: 'disabled' }),
     LocalizeRouterModule.forRoot(routes, {
       parser: {
         provide: LocalizeParser,
         useFactory: (createTranslateLoader),
         deps: [TranslateService, Location, LocalizeRouterSettings/*, HttpClient*/]
-      }
+      },
+      initialNavigation: true
     })
   ],
   exports: [ RouterModule, LocalizeRouterModule ]
