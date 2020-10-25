@@ -25,6 +25,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { environment } from '../environments/environment';
+import { ErrorComponent } from './error/error.component';
 
 // import { UniversalTranslateLoader } from '@ngx-universal/translate-loader';
 
@@ -63,7 +64,8 @@ export function createTranslateLoader(http: HttpClient) {
     // HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    ErrorComponent
   ],
   providers: [ HeroService, MessageService ],
   bootstrap: [ AppComponent ]

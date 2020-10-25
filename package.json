@@ -32,7 +32,7 @@
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/platform-server": "~10.0.2",
     "@angular/router": "~10.0.2",
-    "@gilsdav/ngx-translate-router": "~3.1.0",
+    "@gilsdav/ngx-translate-router": "https://github.com/gilsdav/ngx-translate-router/releases/download/3.1.4/gilsdav-ngx-translate-router-3.1.4.tgz",
     "@gilsdav/ngx-translate-router-http-loader": "~1.1.2",
     "@nguniversal/express-engine": "~10.0.1",
     "@ngx-cache/core": "~9.0.0",
