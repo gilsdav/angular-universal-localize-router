@@ -30,7 +30,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { initialNavigation: 'disabled' }),
+    RouterModule.forRoot(routes, { initialNavigation: 'disabled', relativeLinkResolution: 'legacy' }),
     LocalizeRouterModule.forRoot(routes, {
       parser: {
         provide: LocalizeParser,
