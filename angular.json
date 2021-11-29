@@ -12,7 +12,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -26,7 +25,13 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "preserveSymlinks": true
+            "preserveSymlinks": true,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -39,7 +44,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -51,7 +55,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -105,7 +110,9 @@
             "outputPath": "dist/server",
             "main": "server.ts",
             "tsConfig": "src/tsconfig.server.json",
-            "preserveSymlinks": true
+            "preserveSymlinks": true,
+            "sourceMap": true,
+            "optimization": false
           },
           "configurations": {
             "production": {
@@ -117,7 +124,8 @@
               ],
               "optimization": true
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
@@ -168,5 +176,8 @@
       }
     }
   },
-  "defaultProject": "angular.io-example"
+  "defaultProject": "angular.io-example",
+  "cli": {
+    "analytics": "9a87127c-3971-4fb7-a06a-80d2cf11e87c"
+  }
 }
