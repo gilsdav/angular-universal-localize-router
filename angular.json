@@ -99,7 +99,7 @@
             "main": "server.ts",
             "tsConfig": "src/tsconfig.server.json",
             "preserveSymlinks": true,
-            "sourceMap": true,
+            "sourceMap": false,
             "optimization": false
           },
           "configurations": {
