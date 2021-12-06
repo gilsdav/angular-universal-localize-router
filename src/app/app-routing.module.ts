@@ -1,14 +1,14 @@
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { Location }             from '@angular/common';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {Location} from '@angular/common';
 
-import { DashboardComponent }   from './dashboard/dashboard.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 // import { HeroesComponent }      from './heroes/heroes.component';
-import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
+import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 
-import { LocalizeRouterModule, LocalizeRouterSettings, LocalizeParser, ManualParserLoader } from '@gilsdav/ngx-translate-router';
+import {LocalizeParser, LocalizeRouterModule, LocalizeRouterSettings, ManualParserLoader} from '@gilsdav/ngx-translate-router';
 // import { LocalizeRouterHttpLoader } from '@gilsdav/ngx-translate-router-http-loader';
-import { TranslateService } from '@ngx-translate/core';
+import {TranslateService} from '@ngx-translate/core';
 
 /* export function createTranslateLoader(translate: TranslateService, location: Location, settings: LocalizeRouterSettings, http: HttpClient) {
   return new LocalizeRouterHttpLoader(translate, location, settings, http)
@@ -19,16 +19,16 @@ export function createTranslateLoader(translate: TranslateService, location: Loc
 }
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: HeroDetailComponent },
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'detail/:id', component: HeroDetailComponent},
   // { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' }
-  { path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(mod => mod.HeroesModule) }
+  {path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(mod => mod.HeroesModule)}
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { initialNavigation: 'disabled' }),
+    RouterModule.forRoot(routes, {initialNavigation: 'disabled', relativeLinkResolution: 'legacy'}),
     LocalizeRouterModule.forRoot(routes, {
       parser: {
         provide: LocalizeParser,
@@ -38,6 +38,7 @@ const routes: Routes = [
       initialNavigation: true
     })
   ],
-  exports: [ RouterModule, LocalizeRouterModule ]
+  exports: [RouterModule, LocalizeRouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
