@@ -4,7 +4,6 @@
     "outDir": "../out-tsc/app-server",
     "baseUrl": "./",
     "types": []
-  ,    "target": "es2016"
 },
   "angularCompilerOptions": {
     "entryModule": "app/app.server.module#AppServerModule"

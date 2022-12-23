@@ -57,4 +57,4 @@ if (mainModule && mainModule.filename === __filename) {
 
 export * from './src/main.server';
 
-export { renderModule, renderModuleFactory } from '@angular/platform-server';
+export { renderModuleFactory } from '@angular/platform-server';
