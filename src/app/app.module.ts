@@ -1,5 +1,5 @@
 import {APP_ID, Inject, NgModule, PLATFORM_ID} from '@angular/core';
-import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
@@ -38,9 +38,8 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({appId: 'tour-of-heroes'}),
+    BrowserModule,
     TransferHttpCacheModule,
-    BrowserTransferStateModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
