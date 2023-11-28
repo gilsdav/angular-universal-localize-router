@@ -1,7 +1,7 @@
 import {APP_ID, Inject, NgModule, PLATFORM_ID} from '@angular/core';
 import {BrowserModule, provideClientHydration} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient, provideHttpClient, withFetch} from '@angular/common/http';
 
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './in-memory-data.service';
@@ -39,7 +39,6 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true}
     ),
@@ -59,7 +58,7 @@ export function createTranslateLoader(http: HttpClient) {
     MessagesComponent,
     HeroSearchComponent
   ],
-  providers: [HeroService, MessageService, provideClientHydration()],
+  providers: [HeroService, MessageService, provideClientHydration(), provideHttpClient(withFetch())],
   bootstrap: [AppComponent]
 })
 export class AppModule {
