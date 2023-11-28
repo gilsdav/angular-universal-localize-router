@@ -18,7 +18,7 @@ import {MessageService} from './message.service';
 import {MessagesComponent} from './messages/messages.component';
 import {isPlatformBrowser} from '@angular/common';
 
-import {TransferHttpCacheModule} from '@nguniversal/common';
+import {TransferHttpCacheModule} from '@angular/ssr';
 
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
