@@ -9,7 +9,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:ssrnew": "node dist/ssrnew/server/server.mjs"
+    "serve:ssr": "node dist/example/server/server.mjs"
   },
   "keywords": [],
   "author": "",
