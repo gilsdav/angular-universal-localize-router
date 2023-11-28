@@ -1,5 +1,5 @@
 import {APP_ID, Inject, NgModule, PLATFORM_ID} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, provideClientHydration} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
@@ -17,8 +17,6 @@ import {HeroService} from './hero.service';
 import {MessageService} from './message.service';
 import {MessagesComponent} from './messages/messages.component';
 import {isPlatformBrowser} from '@angular/common';
-
-import {TransferHttpCacheModule} from '@angular/ssr';
 
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -39,7 +37,6 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   imports: [
     BrowserModule,
-    TransferHttpCacheModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -62,7 +59,7 @@ export function createTranslateLoader(http: HttpClient) {
     MessagesComponent,
     HeroSearchComponent
   ],
-  providers: [HeroService, MessageService],
+  providers: [HeroService, MessageService, provideClientHydration()],
   bootstrap: [AppComponent]
 })
 export class AppModule {
