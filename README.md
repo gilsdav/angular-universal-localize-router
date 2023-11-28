@@ -14,6 +14,7 @@ Choose the branch when you clone this repo:
 * angular-12
 * angular-13
 * angular-14
+* angular-16
 
 ## Development server
 
