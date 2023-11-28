@@ -1,6 +1,6 @@
 # angular-universal-localize-router
 
-Angular (5-14) + universal + ngx-translate + ngx-translate-router + lazyloading
+Angular (5-17) + universal + ngx-translate + ngx-translate-router + lazyloading
 
 ## Find appropriate source
 
@@ -15,6 +15,7 @@ Choose the branch when you clone this repo:
 * angular-13
 * angular-14
 * angular-16
+* angular-17
 
 ## Development server
 
