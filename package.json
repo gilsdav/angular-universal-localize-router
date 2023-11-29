@@ -31,7 +31,7 @@
     "@angular/platform-browser-dynamic": "^16.2.12",
     "@angular/platform-server": "^16.2.12",
     "@angular/router": "^16.2.12",
-    "@gilsdav/ngx-translate-router": "http://127.0.0.1:8080/gilsdav-ngx-translate-router-8.0.0.tgz",
+    "@gilsdav/ngx-translate-router": "7.0.0",
     "@gilsdav/ngx-translate-router-http-loader": "~2.0.0",
     "@nguniversal/express-engine": "^16.2.0",
     "@ngx-translate/core": "~15.0.0",
