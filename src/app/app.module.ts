@@ -1,7 +1,7 @@
 import {APP_ID, Inject, NgModule, PLATFORM_ID} from '@angular/core';
-import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
+import {BrowserModule, provideClientHydration} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient, provideHttpClient, withFetch} from '@angular/common/http';
 
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './in-memory-data.service';
@@ -17,8 +17,6 @@ import {HeroService} from './hero.service';
 import {MessageService} from './message.service';
 import {MessagesComponent} from './messages/messages.component';
 import {isPlatformBrowser} from '@angular/common';
-
-import {TransferHttpCacheModule} from '@nguniversal/common';
 
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -38,12 +36,9 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({appId: 'tour-of-heroes'}),
-    TransferHttpCacheModule,
-    BrowserTransferStateModule,
+    BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true}
     ),
@@ -63,7 +58,7 @@ export function createTranslateLoader(http: HttpClient) {
     MessagesComponent,
     HeroSearchComponent
   ],
-  providers: [HeroService, MessageService],
+  providers: [HeroService, MessageService, provideClientHydration(), provideHttpClient(withFetch())],
   bootstrap: [AppComponent]
 })
 export class AppModule {

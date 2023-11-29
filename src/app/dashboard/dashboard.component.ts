@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     .subscribe(heroes => this.heroes = heroes.slice(1, 5));
   }
 
-  switchLanguage(lang) {
+  switchLanguage(lang: string) {
     this.localizeService.changeLanguage(lang);
   }
 

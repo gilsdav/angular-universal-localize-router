@@ -23,12 +23,13 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'detail/:id', component: HeroDetailComponent},
   // { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' }
-  {path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(mod => mod.HeroesModule)}
+  {path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(mod => mod.HeroesModule)},
+  {path: 'heroesbis', loadChildren: () => import('./heroes2/heroes.module-routing').then(mod => mod.routes)}
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {initialNavigation: 'disabled', relativeLinkResolution: 'legacy'}),
+    RouterModule.forRoot(routes, { initialNavigation: 'disabled' }),
     LocalizeRouterModule.forRoot(routes, {
       parser: {
         provide: LocalizeParser,

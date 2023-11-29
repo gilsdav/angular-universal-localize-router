@@ -1,11 +1,13 @@
-import { enableProdMode } from '@angular/core';
-export { AppServerModule } from './app/app.server.module';
+// import { enableProdMode } from '@angular/core';
+// export { AppServerModule } from './app/app.server.module';
 
-import { environment } from './environments/environment';
+// import { environment } from './environments/environment';
 
-if (environment.production) {
-  enableProdMode();
-}
+// if (environment.production) {
+//   enableProdMode();
+// }
 
 
-export { renderModule, renderModuleFactory } from '@angular/platform-server';
+// export { renderModule } from '@angular/platform-server';
+
+export { AppServerModule as default } from './app/app.server.module';

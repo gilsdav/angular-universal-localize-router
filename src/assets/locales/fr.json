@@ -2,5 +2,6 @@
     "HELLO": "Bonjour !",
     "ROUTES.heroes": "heros",
     "ROUTES.home": "accueil",
-    "ROUTES.dashboard": "dashboard"
+    "ROUTES.dashboard": "dashboard",
+    "ROUTES.heroesbis": "seul"
 }
