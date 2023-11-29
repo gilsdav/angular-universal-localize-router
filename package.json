@@ -25,7 +25,7 @@
     "@angular/platform-server": "^17.0.4",
     "@angular/router": "^17.0.4",
     "@angular/ssr": "^17.0.3",
-    "@gilsdav/ngx-translate-router": "http://127.0.0.1:8080/gilsdav-ngx-translate-router-7.0.0.tgz",
+    "@gilsdav/ngx-translate-router": "7.0.0",
     "@gilsdav/ngx-translate-router-http-loader": "~2.0.0",
     "@ngx-translate/core": "~15.0.0",
     "@ngx-translate/http-loader": "~8.0.0",
